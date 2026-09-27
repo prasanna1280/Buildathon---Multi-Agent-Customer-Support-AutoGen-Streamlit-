@@ -1,0 +1,34 @@
+========================================================================================
+Timestamp: 2026-09-27T12:25:31+05:30
+Query:
+How do I reset my password?
+
+Assistant Answer:
+To reset your password, you typically need to follow these steps:
+
+1. Go to the login page of the website or app.
+2. Click on the “Forgot Password?” link or similar option.
+3. Enter your email address or username associated with your account.
+4. Check your email for a password reset link or code.
+5. Follow the instructions in the email to create a new password.
+
+If you're having trouble, refer to the help section of the specific service for more detailed guidance.
+
+Web Search Answer:
+Here are general steps and specific links for resetting passwords on popular services:
+
+1. **General Steps:**
+   - Go to the login page.
+   - Click on “Forgot Password?” or “Reset Password.”
+   - Enter your email address or username.
+   - Check your email for a reset link or instructions.
+   - Follow the prompts to create a new password.
+
+2. **Specific Services:**
+   - **Popular Bank:** Visit the [Popular Mobile Banking help page](https://www.popularbank.com/online-and-mobile/) for guidance on resetting passwords.
+   - **Community Bank, N.A.:** Go to [cbna.com](https://cbna.com/lock-out) and click on “Reset Password” or the "Forgot?" link.
+   - **Tennessee.gov:** Use the [TN.gov account management page](https://apps.tn.gov/paams-app/recover/reset-password) to reset your password by entering your email.
+   - **Popular Direct:** Go to [Popular Direct](https://www.populardirect.com/signin/) and enter your User ID to start the reset process.
+   - **PCAACA:** Visit [this link](https://pcaaca.org/general/email_pass.asp) to reset your password by entering your username or email.
+
+Make sure to check your spam/junk folder if you don't see the reset email in your inbox!

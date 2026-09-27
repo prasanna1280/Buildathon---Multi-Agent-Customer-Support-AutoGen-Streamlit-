@@ -1,0 +1,18 @@
+========================================================================================
+Timestamp: 2026-09-27T13:30:08+05:30
+Query:
+How do i reset my password?
+
+Assistant Answer:
+To reset your password, follow these general steps:
+
+1. Go to the login page of the service you want to access.
+2. Click on the "Forgot Password?" or "Reset Password" link, usually found below the password field.
+3. Enter your email address or username associated with the account.
+4. Check your email for a password reset link or code.
+5. Follow the instructions in the email to set a new password.
+
+If you encounter any issues, check the service's support page for specific instructions.
+
+Web Search Answer:
+If you provide me with the name of the specific service or platform you're trying to reset your password for, I can give you more detailed instructions tailored to that service.

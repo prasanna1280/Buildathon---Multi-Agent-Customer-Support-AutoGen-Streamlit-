@@ -1,0 +1,32 @@
+========================================================================================
+Timestamp: 2026-09-27T13:31:02+05:30
+Query:
+How do i reset my password in gmail?
+
+Assistant Answer:
+To reset your Gmail password, follow these steps:
+
+1. Go to the Gmail sign-in page.
+2. Click on "Forgot password?" under the password field.
+3. Enter the email address for the account you want to recover and click "Next."
+4. Follow the prompts to verify your identity. This may include answering security questions or receiving a verification code via your recovery email or phone number.
+5. Once your identity is verified, you'll be able to create a new password.
+6. Enter and confirm your new password, then save the changes.
+
+After successfully resetting your password, make sure to update it in any applications or devices that use your Gmail account.
+
+Web Search Answer:
+To reset your Gmail password, you can follow these updated steps, including resources directly from Google:
+
+1. **Visit the Gmail Sign-in Page**: Go to the Gmail login page.
+2. **Click "Forgot password?"**: You’ll find this option under the password entry field.
+3. **Enter Your Email Address**: Type in the email address linked to your Google account and click "Next."
+4. **Verify Your Identity**: Google will prompt you to verify your identity. You may need to answer security questions, or you could receive a security code via your recovery email or phone.
+5. **Create a New Password**: Once your identity is confirmed, you will be able to set a new password.
+6. **Confirm and Save**: Enter your new password and confirm it. Make sure to save the changes.
+
+For detailed instructions and support, you can refer to these Google support pages:
+- [Change or reset your password (Computer)](https://support.google.com/accounts/answer/41078?hl=en&co=GENIE.Platform%3DDesktop)
+- [Change or reset your password (Android)](https://support.google.com/mail/answer/41078?hl=en&co=GENIE.Platform%3DAndroid)
+
+Make sure to update the password in any apps or devices using your Gmail account after resetting it.

@@ -1,0 +1,39 @@
+========================================================================================
+Timestamp: 2026-09-27T13:15:02+05:30
+Query:
+How do I reset my password?
+
+Assistant Answer:
+To reset your password, follow these general steps, though the exact process may vary depending on the platform or service:
+
+1. **Go to the Login Page:** Visit the login page of the website or service.
+
+2. **Click on 'Forgot Password' or Similar Link:** Look for a link that says "Forgot Password?" or "Reset Password."
+
+3. **Enter Your Email or Username:** Provide the email address or username associated with your account.
+
+4. **Check Your Email:** Look for an email from the service with instructions on how to reset your password. Make sure to check your spam/junk folder if you don't see it in your inbox.
+
+5. **Follow the Instructions:** Click on the link provided in the email and follow the instructions to create a new password.
+
+6. **Log In with Your New Password:** Once your password is reset, you can log in with your new password.
+
+If you encounter any issues, check the service's help or support section for specific instructions.
+
+Web Search Answer:
+To reset your password, the steps vary slightly depending on the service you're using. Here are some specific links and general instructions for popular services:
+
+1. **Google Account:**
+   - Go to the [Google Account recovery page](https://support.google.com/accounts/answer/41078?hl=en&co=GENIE.Platform%3DAndroid).
+   - Click on "Forgot password?" and follow the prompts to reset it.
+
+2. **Apple Account:**
+   - Open your device's Settings app.
+   - Tap your name, then go to "Sign-In & Security."
+   - Tap "Change Password," enter your device passcode, and follow the onscreen instructions. For detailed steps, check [Apple's support page](https://support.apple.com/en-us/102656).
+
+3. **Microsoft Account:**
+   - Visit the [Microsoft account password reset page](https://support.microsoft.com/en-us/accounts-billing/manage/reset-a-forgotten-microsoft-account-password).
+   - Click on "Forgot password?" and follow the instructions provided there.
+
+If you're trying to reset a password for a different service, the typical steps usually involve visiting the login page, finding a "Forgot Password" link, and then following the email verification process to create a new password.

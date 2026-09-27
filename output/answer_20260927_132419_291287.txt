@@ -1,0 +1,39 @@
+========================================================================================
+Timestamp: 2026-09-27T13:24:19+05:30
+Query:
+How do i reset my password?
+
+Assistant Answer:
+To reset your password, follow these general steps:
+
+1. Go to the login page of the service or website.
+2. Click on the “Forgot Password?” or “Reset Password” link.
+3. Enter your registered email address or username.
+4. Check your email for a password reset link or code.
+5. Follow the instructions in the email to create a new password.
+
+If you have trouble, check the website's help or support section for specific guidance.
+
+Web Search Answer:
+To reset your password on various platforms, the steps may differ slightly. Here are some specific guidelines based on common services:
+
+1. **Email Services (e.g., Gmail, Yahoo)**:
+   - Go to the login page.
+   - Click “Forgot Password?” and follow the instructions to reset it through your registered email or phone number.
+
+2. **Microsoft Accounts**:
+   - Visit the Microsoft account sign-in page.
+   - Select “Forgot my password” and follow the prompts for verification.
+
+3. **Social Media (e.g., Facebook, Twitter)**:
+   - On the login page, click “Forgot Password?”.
+   - Enter your email or phone to receive a reset link or code.
+
+4. **Online Banking**:
+   - Go to your bank's website and locate the login section.
+   - Look for “Forgot Password?” and follow the instructions for resetting your password securely.
+
+5. **Most Apps and Services**:
+   - Generally follow the steps: navigate to the login page, click on the password reset link, enter required information, and follow the email or SMS instructions.
+
+If you have a specific service in mind, please let me know, and I can provide more detailed steps!
