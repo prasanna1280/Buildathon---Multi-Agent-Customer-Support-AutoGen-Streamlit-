@@ -1,57 +1,75 @@
 services:
+
   supportops-ai:
     build:
       context: .
       dockerfile: Dockerfile
+
     container_name: supportops-ai
+
     restart: unless-stopped
+
     env_file:
       - .env
+
     expose:
       - "8501"
+
     volumes:
       - ./logs:/app/logs
       - ./output:/app/output
+
     healthcheck:
-      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8501/_stcore/health')"]
+      test:
+        [
+          "CMD",
+          "python",
+          "-c",
+          "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8501/_stcore/health')"
+        ]
       interval: 30s
       timeout: 10s
       retries: 3
       start_period: 30s
 
+
   nginx:
     build:
       context: ./nginx
       dockerfile: Dockerfile
+
     container_name: supportops-nginx
+
     restart: unless-stopped
+
     depends_on:
       supportops-ai:
         condition: service_healthy
+
     environment:
       DOMAIN: ${DOMAIN}
-    ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - ./certbot/www:/var/www/certbot:ro
-      - ./certbot/conf:/etc/letsencrypt:ro
+
+    expose:
+      - "80"
+
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.supportops.rule=Host(`${DOMAIN}`)"
+      - "traefik.http.routers.supportops.entrypoints=websecure"
+      - "traefik.http.routers.supportops.tls=true"
+      - "traefik.http.routers.supportops.tls.certresolver=letsencrypt"
+      - "traefik.http.services.supportops.loadbalancer.server.port=80"
+
     healthcheck:
-      test: ["CMD", "wget", "--spider", "-q", "http://127.0.0.1/healthz"]
+      test:
+        [
+          "CMD",
+          "wget",
+          "--spider",
+          "-q",
+          "http://127.0.0.1/healthz"
+        ]
       interval: 30s
       timeout: 5s
       retries: 3
-
-  certbot:
-    image: certbot/certbot:latest
-    container_name: supportops-certbot
-    profiles: ["ssl"]
-    volumes:
-      - ./certbot/www:/var/www/certbot
-      - ./certbot/conf:/etc/letsencrypt
-    entrypoint: ["certbot"]
-    command: >-
-      certonly --webroot --webroot-path=/var/www/certbot
-      --email ${LETSENCRYPT_EMAIL}
-      --agree-tos --no-eff-email
-      -d ${DOMAIN}
+      start_period: 10s
