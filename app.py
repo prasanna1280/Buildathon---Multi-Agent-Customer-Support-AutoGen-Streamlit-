@@ -405,7 +405,7 @@ st.markdown(
 <style>
 :root { --ink:#111827; --muted:#64748b; --line:#e5e7eb; --panel:#ffffff; --brand:#ef4444; --brand2:#f97316; --navy:#111827; }
 .stApp { background:linear-gradient(180deg,#f8fafc 0%,#f1f5f9 100%); }
-.block-container { max-width:1500px; padding:1.1rem 2rem 3rem; }
+.block-container { max-width:1500px; padding:1rem 2rem 1.25rem; }
 section[data-testid="stSidebar"] { background:linear-gradient(180deg,#0f172a 0%,#172033 100%); }
 section[data-testid="stSidebar"] * { color:#e5e7eb; }
 section[data-testid="stSidebar"] .stMetric label { color:#94a3b8 !important; }
@@ -423,15 +423,61 @@ section[data-testid="stSidebar"] div[data-testid="stDownloadButton"] button p, s
 .hero p { margin:.5rem 0 0; color:#cbd5e1; font-size:1rem; }
 .hero-badges { display:flex; gap:.5rem; margin-top:1rem; flex-wrap:wrap; }
 .hero-badge { border:1px solid rgba(255,255,255,.16); background:rgba(255,255,255,.08); border-radius:999px; padding:.32rem .65rem; font-size:.78rem; }
-.section-title { font-size:1.02rem; font-weight:800; color:var(--ink); margin:.3rem 0 .65rem; }
-.workflow { display:grid; grid-template-columns:1fr 42px 1fr 42px 1fr; gap:.55rem; align-items:center; margin:1rem 0 1.15rem; }
-.step { background:#fff; border:1px solid var(--line); border-radius:17px; padding:.9rem; box-shadow:0 6px 18px rgba(15,23,42,.05); }
-.step-num { font-size:.72rem; color:#94a3b8; font-weight:800; }
-.step-name { font-weight:800; margin-top:.15rem; }
-.step-sub { color:var(--muted); font-size:.78rem; margin-top:.2rem; }
-.arrow { text-align:center; color:#cbd5e1; font-size:1.35rem; }
-.query-card { background:#fff; border:1px solid var(--line); border-radius:20px; padding:1rem 1rem .7rem; box-shadow:0 8px 24px rgba(15,23,42,.06); }
-div[data-testid="stTextArea"] textarea { border-radius:14px !important; background:#f8fafc !important; border:1px solid #dbe2ea !important; }
+.section-title { font-size:1.02rem; font-weight:800; color:#111827 !important; margin:.15rem 0 .45rem; }
+.workflow { display:grid; grid-template-columns:1fr 42px 1fr 42px 1fr; gap:.45rem; align-items:center; margin:.45rem 0 .75rem; }
+.step { background:#fff; border:1px solid #dbe2ea; border-radius:15px; padding:.7rem .85rem; box-shadow:0 4px 14px rgba(15,23,42,.05); }
+.step-num { font-size:.70rem; color:#64748b !important; font-weight:800; }
+.step-name { color:#111827 !important; font-weight:800; font-size:.95rem; margin-top:.12rem; }
+.step-sub { color:#475569 !important; font-size:.76rem; margin-top:.15rem; }
+.arrow { text-align:center; color:#94a3b8 !important; font-size:1.25rem; font-weight:700; }
+.query-card { background:#fff; border:1px solid var(--line); border-radius:18px; padding:.75rem .9rem .45rem; box-shadow:0 6px 20px rgba(15,23,42,.05); }
+/* Main-page text contrast */
+.stApp [data-testid="stMetricLabel"] {
+    color:#64748b !important;
+}
+.stApp [data-testid="stMetricValue"] {
+    color:#111827 !important;
+}
+.query-card [data-testid="stCaptionContainer"],
+.query-card [data-testid="stCaptionContainer"] * {
+    color:#64748b !important;
+}
+.stApp [data-testid="stStatusWidget"],
+.stApp [data-testid="stStatusWidget"] * {
+    color:#111827 !important;
+}
+
+/* Customer query textarea — explicit readable colors for Streamlit/BaseWeb */
+div[data-testid="stTextArea"] textarea,
+div[data-testid="stTextArea"] [data-baseweb="textarea"] textarea {
+    background-color:#ffffff !important;
+    color:#111827 !important;
+    -webkit-text-fill-color:#111827 !important;
+    caret-color:#111827 !important;
+    border:1px solid #cbd5e1 !important;
+    border-radius:14px !important;
+    font-size:1rem !important;
+    font-weight:500 !important;
+    opacity:1 !important;
+}
+
+div[data-testid="stTextArea"] [data-baseweb="base-input"],
+div[data-testid="stTextArea"] [data-baseweb="textarea"] {
+    background-color:#ffffff !important;
+}
+
+div[data-testid="stTextArea"] textarea::placeholder,
+div[data-testid="stTextArea"] [data-baseweb="textarea"] textarea::placeholder {
+    color:#64748b !important;
+    -webkit-text-fill-color:#64748b !important;
+    opacity:1 !important;
+}
+
+div[data-testid="stTextArea"] textarea::selection {
+    background-color:#bfdbfe !important;
+    color:#111827 !important;
+    -webkit-text-fill-color:#111827 !important;
+}
 div.stButton > button { border-radius:12px; font-weight:750; min-height:44px; }
 .metric-card { background:#fff; border:1px solid var(--line); border-radius:16px; padding:.8rem 1rem; box-shadow:0 5px 18px rgba(15,23,42,.04); }
 .answer-card { background:#fff; border:1px solid var(--line); border-radius:18px; overflow:hidden; min-height:220px; height:auto; box-shadow:0 10px 28px rgba(15,23,42,.07); }
@@ -530,14 +576,17 @@ with st.sidebar:
         '<div class="artifact-card"><div class="artifact-icon">🧩</div><div><div class="artifact-name">skills/*.md</div><div class="artifact-meta">agent skill definitions</div></div></div>',
         unsafe_allow_html=True,
     )
-    if ANSWERS_FILE.exists():
-        st.download_button(
-            "⬇️ Download answers.txt",
-            data=ANSWERS_FILE.read_bytes(),
-            file_name="answers.txt",
-            mime="text/plain",
-            use_container_width=True,
-        )
+    # Keep the download control visible even before the first case is saved.
+    answers_available = ANSWERS_FILE.exists()
+    st.download_button(
+        "⬇️ Download answers.txt",
+        data=ANSWERS_FILE.read_bytes() if answers_available else b"",
+        file_name="answers.txt",
+        mime="text/plain",
+        use_container_width=True,
+        disabled=not answers_available,
+        help="Run a workflow first to create answers.txt." if not answers_available else "Download the saved customer-support cases.",
+    )
 
 # Header
 st.markdown(
@@ -577,7 +626,7 @@ st.markdown("<div class='section-title'>Customer query / task</div>", unsafe_all
 query = st.text_area(
     "",
     placeholder="Ask a customer-support question… e.g. How do I reset my password?",
-    height=115,
+    height=100,
     key="query_input",
     label_visibility="collapsed",
 )
@@ -612,6 +661,9 @@ if run_clicked:
             st.write("Initializing the three-agent pipeline…")
             result = run_team_streaming_sync(cleaned_query, live_placeholder, workflow_status)
         st.session_state["last_result"] = result
+        # The sidebar is rendered before the workflow executes. Rerun once so the
+        # newly-created answers.txt appears in the sidebar download control.
+        st.rerun()
 
 result = st.session_state.get("last_result")
 if result:
